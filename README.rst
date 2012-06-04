@@ -3,11 +3,11 @@ Site styles for rosslaird.com
 =============================
 
 This repository is provided primarily for my students, but is open to anyone
-who wishes to view the styles (CSS) that I use at rosslaird.com. I have also
+who wishes to view the styles (CSS) that I use at rosslaird.com_. I have also
 included various Javascript files, images, and site-specific files I use to
 deploy my site using Mezzanine_.
 
-If you building a site with Mezzanine_, you should be aware that this
+If you are building a site with Mezzanine_, you should be aware that this
 repository represents a theme application and should live as an application
 inside your Mezzanine project. (Please consult the Mezzanine docs_ for more
 information.) You should also be aware that the CSS file included in this
@@ -26,6 +26,7 @@ files on your local machine to experiment, play, learn, break, rebuild, and
 explore. And, if you have trouble, ask me in class.
 
 
+.. _rosslaird.com: http://rosslaird.com
 .. _Mezzanine: http://mezzanine.jupo.org
 .. _rosslaird.com: http://rosslaird.com
 .. _docs: http://mezzanine.jupo.org/docs/frequently-asked-questions.html#how-do-i-create-install-a-theme
