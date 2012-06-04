@@ -1,0 +1,51 @@
+{% load mezzanine_tags %}
+
+{% editable_loader %}
+
+<script>
+{% if settings.GOOGLE_ANALYTICS_ID %}
+var _gaq = _gaq || [['_trackPageview']];
+_gaq.unshift(['_setAccount', '{{ settings.GOOGLE_ANALYTICS_ID }}']);
+(function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = '//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+})(document, 'script');
+{% endif %}
+</script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/noisy/1.1/jquery.noisy.min.js"></script>
+
+<script src="{{ STATIC_URL }}js/hyphenator/Hyphenator.js" type="text/javascript"></script>
+  <script type="text/javascript">
+Hyphenator.config({
+    displaytogglebox : false,
+    minwordlength : 4
+    });
+Hyphenator.run();
+</script>
+
+
+<script>
+$('body').noisy({
+    intensity: 1,
+    size: 200,
+    opacity: 0.08,
+    fallback: '/static/img/background.gif',
+    monochrome: false
+    }).css('background-color', '#E3D8C2');
+
+$('.breadcrumb').noisy().css('background-color', '#999999');
+$('.footer').noisy({
+    intensity: 1,
+    size: 200,
+    opacity: 0.08,
+    fallback: '/static/img/background.gif',
+    monochrome: false
+}).css('background-color', '#2B2B2B');
+
+</script>
+
+
+

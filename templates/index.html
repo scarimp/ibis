@@ -1,0 +1,238 @@
+{% load pages_tags mezzanine_tags i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+{% if "mezzanine.blog"|is_installed %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url blog_post_feed "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url blog_post_feed "atom" %}">
+{% endif %}
+<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.responsive.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/custom.css">
+{% if "cartridge.shop"|is_installed %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/cartridge.css">
+{% endif %}
+<script src="{{ STATIC_URL }}mezzanine/js/{{ settings.JQUERY_FILENAME }}"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script>
+$(function() {
+    $('.middleinput:text, textarea').addClass('xlarge');
+    $('.control-group label').addClass('control-label');
+});
+</script>
+<!--[if lt IE 9]>
+<script src="{{ STATIC_URL }}js/html5shiv/dist/html5shiv.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="http://use.typekit.com/bod6cvc.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+{% block extra_head %}{% endblock %}
+
+</head>
+<body id="{% block body_id %}body{% endblock %}">
+
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+    {% if settings.SITE_TAGLINE %}<p class="tagline">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+    <div class="nav-collapse">
+        <form action="{% url search %}" class="navbar-search pull-right">
+        <input class="search-query" placeholder="{% trans "Search" %}" type="text" name="q" value="{{ request.REQUEST.q }}">
+        </form>
+        {% page_menu "pages/menus/primary.html" %}
+    </div>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}" data-alert="alert">
+<a class="close" href="#" onclick="$(this).parent().fadeOut('fast'); return false;">×</a>{{ message }}
+</div>
+{% endfor %}
+
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="span1 left">
+</div>
+
+<div class="span9 middle hyphenate">
+
+{% block main %}
+
+<h2>My Books</h2>
+<div class="group">
+   <ol class="books group">
+     <li class="group">
+       <div class="book">
+          <div class="book-img">
+             <a href="/books/grain-of-truth"><img src="/static/media/uploads/grain_promo.png" title="Grain of Truth" />
+               <span><strong>Grain of Truth</strong></span></a>
+</div><!-- /book -->
+</div><!-- /book-img -->
+    </li>
+    <li class="group">
+       <div class="book">
+          <div class="book-img">
+             <a href="/books/a-stones-throw"><img src="/static/media/uploads/stone_cover_selection.png" title="A Stone's Throw" />
+               <span><strong>A Stone's Throw</strong></span></a>
+</div><!-- /book -->
+</div><!-- /book-img -->
+    </li>
+    <li class="group third">
+       <div class="book">
+          <div class="book-img">
+              <a href="books/labyrinth"><img src="/static/media/uploads/coming_soon_path.png" title="Labyrinth" />
+                <span><strong>Labyrinth</strong></span></a>
+</div><!-- /book -->
+</div><!-- /book-img -->
+   </li>
+</ol>
+</div><!-- /group -->
+<div><!-- Recent Posts -->
+{% load blog_tags keyword_tags i18n %}
+{% blog_recent_posts 5 as recent_posts %}
+{% if recent_posts %}
+<h2>{% trans "Recent Articles and Ruminations" %}</h2>
+{% for recent_post in recent_posts %}
+<h3><a href="{{ recent_post.get_absolute_url }}"
+    >{{ recent_post.title }}</a></h3>
+
+    <h4>{{ recent_post.publish_date|timesince }} {% trans "ago" %}</h4>
+<div class="recent-summary hyphenate">
+{{ recent_post.description_from_content|safe }}
+
+    <a href="{{ recent_post.get_absolute_url }}" class="btn btn-info btn-mini">{% trans "read more" %}</a>
+<hr>
+</div><!-- /recent-summary -->
+{% endfor %}
+{% endif %}
+</div><!-- /Recent Posts -->
+</div><!-- /span8 -->
+
+
+{% endblock %}
+<div class="span3 right nudge">
+    {% include "includes/user_panel.html" %}
+
+<div class="panel">
+{% load blog_tags keyword_tags i18n %}
+{% blog_categories as categories %}
+{% if categories %}
+<h3>{% trans "Categories" %}</h3>
+<ul class="unstyled cat">
+{% for category in categories %}
+<li><a href="{% url blog_post_list_category category.slug %}"
+    >{{ category }}</a> <em>{{ category.post_count }}</em></li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+
+    <div class="panel">
+    {% block right_panel %}
+    {% if "mezzanine.twitter"|is_installed %}
+    {% include "twitter/tweets.html" %}
+    {% endif %}
+    {% endblock %}
+    </div>
+
+<div class="panel">
+<h3>Press</h3>
+<ul class="press">
+<li>
+<blockquote>
+<p>&#8220;Laird is a philosopher... and a poet with a great gift for language.&#8221;</p>
+<p class="author">&#8212; Lawrence Scanlan,<br/> <cite>The Globe and Mail</cite></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>&#8220;Laird writes with the voice of a poet and the eye of an artist...his sentences are spare, transparent, unobtrusive vehicles of meaning. With his prose he achieves a rare melding of form with content.&#8221;</p>
+<p class="author">&#8212; Marilyn Gear Pilling,<br/> <cite>The Hamilton Spectator</cite></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>&#8220;It is useful to be reminded that there is another manner in which to live, a life more in tune with the rhythms of nature and the people around us, and yet responsive to the oldest of songs.&#8221;</p>
+<p class="author">&#8212; Robert Wiersema<br/><cite>The Georgia Straight</cite></p>
+</blockquote>
+</li>
+</ul>
+</div><!-- /quotes -->
+
+</div><!-- /span3 right -->
+
+</div><!-- /row -->
+</div><!-- /container -->
+
+<div class="container footer">
+<div class="row">
+  <div class="span6">
+<p><img id="ribbon" src="/static/media/uploads/ribbon_small.png" alt="ribbon"></p><h3>About Me</h3>
+
+<p class="foot">I am a <a href="/about/consulting">consultant</a>, <a href="/about/teaching">teacher</a>, <a href="/about/writing">writer</a>, and <a href="/about/craft-work">creative artist</a>. I work with educators, counsellors, social service providers, and many other groups on a wide variety of projects and initiatives. I am interested in the spaces between things, in the unspoken, in the unexamined and unexpressed. I am an advocate for personal health, educational renewal, and community development. I enjoy running, rock climbing, woodworking, and exploring the vanishing wilderness. I live in Vancouver, British Columbia.&nbsp;&nbsp;<a href="/contact"><i class="icon-envelope icon-white"></i></a></p>
+</div><!-- /span6 -->
+<div class="span2">
+<h3><i class="icon-folder-open icon-white"></i>&nbsp;Sections</h3>
+{% page_menu "pages/menus/footer.html" %}
+
+</div><!-- /span2 -->
+
+<div class="span2">
+<h3><i class="icon-tags icon-white"></i>&nbsp;Categories</h3>
+<ul class="footnudge">
+    <li><a href="/blog/category/creativity/">Creativity</a></li>
+    <li><a href="/blog/category/education/">Education</a></li>
+    <li><a href="/blog/category/mentorship/">Mentorship</a></li>
+    <li><a href="/blog/category/development/">Development</a></li>
+    <li><a href="/blog/category/addictions/">Addictions</a></li>
+    <li><a href="/blog/category/technology/">Technology</a></li>
+    <li><a href="/blog/category/fitness/">Fitness</a></li>
+</ul>
+
+
+</div><!-- /span2 -->
+
+
+  <div class="span2">
+<h3><i class="icon-cog icon-white"></i>&nbsp;Built With</h3>
+<ul class="footnudge">
+    <li><a href="http://mezzanine.jupo.org">Mezzanine</a></li>
+    {% if "cartridge.shop"|is_installed %}
+    <li><a href="http://cartridge.jupo.org">Cartridge</a></li>{% endif %}
+    <li><a href="http://www.djangoproject.com">Django</a></li>
+    <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
+    <li><a href="http://github.com">Github</a></li>
+    <li><a href="http://ubuntu.com">Ubuntu</a></li>
+    <li><a href="http://www.gnu.org/software/emacs/">Emacs</a></li>
+</ul>
+
+</div><!-- /span2 -->
+
+</div><!-- /row -->
+</div><!-- /container -->
+
+{% include "includes/footer_scripts.html" %}
+</body>
+</html>
