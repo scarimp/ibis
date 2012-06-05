@@ -43,7 +43,8 @@ web pages, as follows:
 
 - html5shiv_, to enable HTML5 elements (such as ``article`` and ``section``) in older browsers.
 
-- hyphenator_, to enable proper typographical hyphenation in web pages.
+- Hyphenator_, to enable proper typographical hyphenation in web pages. If you use the justification settings
+  in the CSS file, you should also enable this script.
 
 - Noisy_, to replace the background image of a web page (or any element) with
   code (easier, smaller, faster).
