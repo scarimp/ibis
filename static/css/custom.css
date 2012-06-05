@@ -479,7 +479,7 @@ dd {
 /* Category styling for blog listing page */
 
 .category-list {
-    background: rgba(220,200,180,.65);
+    background: rgba(210,200,180,1);
     padding-left: 2px;
     padding-right: 2px;
     margin-left: 4px;
