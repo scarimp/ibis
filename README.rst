@@ -41,8 +41,7 @@ The ``js`` directory contains several Javascripts that can be used to render
 proper typography and design (as well as innovative typography and design) on
 web pages, as follows:
 
-- html5shiv_, to enable HTML5 elements (such as ``article`` and
-``section``) in older browsers.
+- html5shiv_, to enable HTML5 elements (such as ``article`` and ``section``) in older browsers.
 
 - hyphenator_, to enable proper typographical hyphenation in web pages.
 
