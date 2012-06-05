@@ -73,6 +73,6 @@ This will clone the repository into a subdirectory called ``ibis`` beneath whate
 .. _Bootswatch: http://bootswatch.com/
 .. _Django: https://www.djangoproject.com/
 .. _html5shiv: http://code.google.com/p/html5shiv/
-.. _hyphneator: http://code.google.com/p/hyphenator/
+.. _hyphenator: http://code.google.com/p/hyphenator/
 .. _Noisy: https://github.com/DanielRapp/Noisy
 .. _Lettering.js: http://letteringjs.com/
