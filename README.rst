@@ -37,6 +37,20 @@ Mezzanine), and various Javascripts. The ``prettify`` directory contains scripts
 for rendering code snippets in web pages. The ``media`` directory contains a few
 images used on the rosslaird.com_ site.
 
+The ``js`` directory contains several Javascripts that can be used to render
+proper typography and design (as well as innovative typography and design) on
+web pages, as follows:
+
+- html5shiv_, to enable HTML5 elements (such as ``article`` and
+``section``) in older browsers.
+
+- hyphenator_, to enable proper typographical hyphenation in web pages.
+
+- Noisy_, to replace the background image of a web page (or any element) with
+  code (easier, smaller, faster).
+
+- Lettering.js_, to enable radical web typography.
+
 The ``templates`` directory contains files used with Mezzanine. If you are
 building a site with Mezzanine, you can adapt these files to your own needs.
 If not, you can ignore these files. They won't be of any use outside the
@@ -58,3 +72,7 @@ This will clone the repository into a subdirectory called ``ibis`` beneath whate
 .. _Bootstrap: http://twitter.github.com/bootstrap/
 .. _Bootswatch: http://bootswatch.com/
 .. _Django: https://www.djangoproject.com/
+.. _html5shiv: http://code.google.com/p/html5shiv/
+.. _hyphneator: http://code.google.com/p/hyphenator/
+.. _Noisy: https://github.com/DanielRapp/Noisy
+.. _Lettering.js: http://letteringjs.com/
