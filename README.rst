@@ -26,7 +26,7 @@ rebuild, and explore. And, if you have trouble, ask me in class.
 What's Here, Exactly?
 ----------------------
 
-The ``README.rst`` files is what you are reading now.
+The ``README.rst`` file is what you are reading now.
 
 The ``__init__.py`` and ``__init__.pyc`` files are for Django_. You can ignore these files.
 
