@@ -12,16 +12,26 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url blog_post_feed "rss" %}">
 <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url blog_post_feed "atom" %}">
 {% endif %}
+
 <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}ico/apple-touch-icon-57-precomposed.png">
+
+
+<link rel="stylesheet/less" href="{{ STATIC_URL }}css/custom.less">
+<link rel="stylesheet/less" href="{{ STATIC_URL }}bootstrap/less/bootstrap.less">
+<script src="{{ STATIC_URL }}js/less-1.3.0.min.js"></script>
+
 <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.responsive.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/custom.css">
+
 {% if "cartridge.shop"|is_installed %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/cartridge.css">
 {% endif %}
-<script src="{{ STATIC_URL }}mezzanine/js/{{ settings.JQUERY_FILENAME }}"></script>
-<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}/js/jquery/dist/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}bootstrap/docs/assets/js/bootstrap.min.js"></script>
 <script>
 $(function() {
     $('.middleinput:text, textarea').addClass('xlarge');
@@ -32,7 +42,7 @@ $(function() {
 <script src="{{ STATIC_URL }}js/html5shiv/dist/html5shiv.js"></script>
 <![endif]-->
 
-<script type="text/javascript" src="http://use.typekit.com/bod6cvc.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/jbz0wgh.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 {% block extra_head %}{% endblock %}
@@ -76,7 +86,7 @@ $(function() {
 <div class="span1 left">
 </div>
 
-<div class="span9 middle hyphenate">
+<div class="span9 middle">
 
 {% block main %}
 
@@ -119,7 +129,7 @@ $(function() {
     >{{ recent_post.title }}</a></h3>
 
     <h4>{{ recent_post.publish_date|timesince }} {% trans "ago" %}</h4>
-<div class="recent-summary hyphenate">
+<div class="recent-summary">
 {{ recent_post.description_from_content|safe }}
 
     <a href="{{ recent_post.get_absolute_url }}" class="btn btn-info btn-mini">{% trans "read more" %}</a>

@@ -214,7 +214,7 @@ ol.books li div.book a span {
     width: 100%;
     bottom: 0;
     left: 0;
-    font-family: skolar,Georgia,serif;
+    font-family: "skolar-1","skolar-2" ,Georgia,serif;
     font-size: 1em;
     font-weight: normal;
     line-height: 1.3em;
@@ -229,7 +229,7 @@ ol.books li div.book a span {
 ol.books li div.book a span strong {
     display: block;
     padding: 5px 5px 10px 5px;
-    font-family: skolar,Georgia,serif;
+    font-family: "skolar-1","skolar-2" ,Georgia,serif;
     font-style: italic;
     text-align: center;
     color: #e3c887;
@@ -341,7 +341,7 @@ ul.press li blockquote a {
 ul.press li blockquote p {
     margin-top: 10px;
     padding: 0;
-    font-family: skolar, Georgia, sans-serif;
+    font-family: "skolar-1","skolar-2" , Georgia, sans-serif;
 }
 ul.press li blockquote p.author {
     margin-bottom: 10px;
