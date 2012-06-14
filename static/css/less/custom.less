@@ -5,20 +5,15 @@
 
 /* Note:
    When used with the Twitter Bootstrap
-   framework, this file should be loaded after
-   bootstrap.less.                            */
+   framework, this file should be included
+   in the bootstrap load sequence.             */
 
 /* Styles follow below.
 _______________________________________________*/
 
-/* Variables */
-
-
-
 /* Mixins */
 
 .shadowed {text-shadow: 1px 1px 1px rgba(0,0,0,.3);}
-
 
 
 /* Links: fade effect with no underlining      */
@@ -102,7 +97,7 @@ ol.books li.third {
 ol.books li div.book {
     position: relative;
     overflow: hidden;
-    border: 1px solid #EEE;
+    border: 1px solid @grayLighter;
     -webkit-border-radius: 10px 10px;
     -moz-border-radius: 10px 10px;
     border-radius: 10px;
@@ -142,7 +137,7 @@ ol.books li div.book a span em {
     font-size: .75em;
     font-style: normal;
     text-align: left;
-    color: #fff;
+    color: @white;
 }
 ol.books li div.book-img img {
     max-width: 100%;
@@ -209,14 +204,6 @@ acronym {
     background: #dcebe2;
 }
 
-/* I have no idea what this is for... */
-
-.cat li em {
-    font-style: normal;
-    text-align: right;
-    float: right;
-}
-
 /* Use the best possible ampersand */
 
 span.amp {
@@ -226,14 +213,9 @@ span.amp {
     font-size: 1.2em;
 }
 
-/* Style the header links  */
+/* Style the site name and links  */
 
-.navbar a.brand {
-    color: #56C4E2;
-    font-weight: bold;
-}
-
-.navbar a {font-weight: bold;}
+.navbar a.brand, .navbar a {font-weight: @headingsFontWeight;}
 
 /* Max width for images */
 
@@ -400,8 +382,8 @@ dd {
 }
 
 .footer {
-    background: #262626;
-    border: 1px solid #EEE;
+    background: @grayDarker;
+    border: 1px solid @grayLighter;
     -moz-border-radius: 10px 10px 0 0;
     -webkit-border-radius: 10px 10px 0 0;
     border-radius: 10px 10px 0 0;
@@ -409,7 +391,7 @@ dd {
 }
 
 .footer h3 {
-    color: #666;
+    color: @grey;
     text-transform: uppercase;
     font-size: 13px;
     margin-left: 0;
