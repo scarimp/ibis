@@ -30,12 +30,11 @@ The ``README.rst`` file is what you are reading now.
 
 The ``__init__.py`` and ``__init__.pyc`` files are for Django_. You can ignore these files.
 
-The ``static`` directory includes several subdirectories: ``css``, ``img``, ``js``,
-``media``, and ``prettify``. These directories contain most of the files that will
-be of interest to my students: a style sheet, some image files (used with
-Mezzanine), and various Javascripts. The ``prettify`` directory contains scripts
-for rendering code snippets in web pages. The ``media`` directory contains a few
-images used on the rosslaird.com_ site.
+The ``static`` directory includes several subdirectories inclusing ``css``, ``img``, ``js``,
+``media``, and ``bootstrap``. These directories contain most of the files that will
+be of interest to my students: style sheets, image files (used with
+Mezzanine), and various Javascripts. (The ``media`` directory contains a few
+images used on the rosslaird.com_ site.)
 
 The ``js`` directory contains several Javascripts that can be used to render
 proper typography and design (as well as innovative typography and design) on
@@ -43,8 +42,8 @@ web pages, as follows:
 
 - html5shiv_, to enable HTML5 elements (such as ``article`` and ``section``) in older browsers.
 
-- Hyphenator_, to enable proper typographical hyphenation in web pages. If you use the justification settings
-  in the CSS file, you should also enable this script.
+- Hyphenator_, to enable proper typographical hyphenation in web pages. If you use justification 
+  in your CSS file, you should also enable this script.
 
 - Noisy_, to replace the background image of a web page (or any element) with
   code (easier, smaller, faster).

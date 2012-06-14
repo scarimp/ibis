@@ -26,15 +26,8 @@ a:link, a:visited {
 
 /* Main header styling (for bootstrap framework) */
 
-h1 {
-    color: @grey;
-    .shadowed;
-}
-
-.middle h2, h3 {
-    color: @grey;
-    .shadowed;
-}
+h1 {.shadowed;}
+.middle h2, h3 {.shadowed;}
 
 /* Un-styled lists: no bullets!  */
 
@@ -50,7 +43,7 @@ h1 {
 
 .promo p {
     font-size: 18px;
-    color: #565C61;
+    color: @grayDark;
     .shadowed;
 }
 
@@ -116,7 +109,7 @@ ol.books li div.book a span {
     font-weight: normal;
     line-height: 1.3em;
     color: #ccc;
-    background-color: #2A2A2A;
+    background-color: @grayDark;
     opacity: .7;
     border-radius: 0 0 10px 10px;
     -webkit-border-radius: 0 0 10px 10px;
@@ -128,7 +121,7 @@ ol.books li div.book a span strong {
     padding: 5px 5px 10px 5px;
     font-family: @sansFontFamily;
     text-align: center;
-    color: #e3c887;
+    color: @warningBackground;
 }
 ol.books li div.book a span em {
     display: block;
@@ -153,7 +146,6 @@ ol.books li div.book-img img {
   margin: 15px;
   overflow: hidden;
   border: 10px solid #e2e1d4;
-  background: #e2e1d4;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -182,7 +174,7 @@ ol.books li div.book-img img {
     margin:24px 12px;
     border:0;
     border-top:0;
-    border-bottom:1px solid #F6E4E2;
+    border-bottom:1px solid @grayLighter;
 }
 
 .recent-summary p {
@@ -201,7 +193,7 @@ ol.books li div.book-img img {
 
 acronym {
     cursor:help;border:0;
-    background: #dcebe2;
+    background: @warningBackground;
 }
 
 /* Use the best possible ampersand */
@@ -357,10 +349,9 @@ dd {
 }
 
 .foot {
-    color: #E3D8C2;
+    color: @warningBackground;
     margin-left: 20px;
     margin-right: 15px;
-    text-align: justify;
     .shadowed;
 }
 
@@ -391,7 +382,7 @@ dd {
 }
 
 .footer h3 {
-    color: @grey;
+    color: @grayLighter;
     text-transform: uppercase;
     font-size: 13px;
     margin-left: 0;
