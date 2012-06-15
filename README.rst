@@ -42,13 +42,15 @@ web pages, as follows:
 
 - html5shiv_, to enable HTML5 elements (such as ``article`` and ``section``) in older browsers.
 
-- Hyphenator_, to enable proper typographical hyphenation in web pages. If you use justification 
-  in your CSS file, you should also enable this script.
+- Hyphenator_, to enable proper typographical hyphenation in web pages.
+  If you use justification in your CSS file, you should also enable this script.
 
 - Noisy_, to replace the background image of a web page (or any element) with
   code (easier, smaller, faster).
 
 - Lettering.js_, to enable radical web typography.
+
+- Less.js_, to enable the use of the ``Less`` dynamic stylesheet language.
 
 The ``templates`` directory contains files used with Mezzanine. If you are
 building a site with Mezzanine, you can adapt these files to your own needs.
@@ -75,3 +77,4 @@ This will clone the repository into a subdirectory called ``ibis`` beneath whate
 .. _hyphenator: http://code.google.com/p/hyphenator/
 .. _Noisy: https://github.com/DanielRapp/Noisy
 .. _Lettering.js: http://letteringjs.com/
+.. _Less: http://lesscss.org/
